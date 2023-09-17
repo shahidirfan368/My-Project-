@@ -3,7 +3,7 @@
 <?php
 session_start();
 error_reporting(0);
-include('include/config.php');
+include('includes/config.php');
 if(strlen($_SESSION['emplogin'])==0)
     {   
 header('location:leavehistory.php');
@@ -63,7 +63,7 @@ else{
                    <br>
 				   <center>
                    
-                                <table style="background-color:rgba(255,99 ,71);">
+                                <table style="style="background-color:rgba(255,99 ,71);">
                                     <thead>
                                         <tr>
                                             <th>#</th>

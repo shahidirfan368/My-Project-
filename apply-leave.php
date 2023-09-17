@@ -1,8 +1,8 @@
-<center>
+
   <?php
 session_start();
 error_reporting(0);
-include('include/config.php');
+include('includes/config.php');
 if(strlen($_SESSION['emplogin'])==0)
     {   
 header('location:apply-leave.php');
@@ -43,30 +43,31 @@ $error="Something went wrong. Please try again";
 }
 
     ?>
- <div class="content-wrapper" >
+ <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-            
-            <div class="box-body"  >
-
+              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
+            </div>
+            <div class="box-body">
 
         <title>Employee | Apply Leave</title>
        
    
-
-
-      
+  <?php include('includes/header.php');?>
+            
+       <?php include('includes/sidebar.php');?>
    <main class="mn-inner">
                 <div class="row">
                     <div class="col s12">
+                        <div class="page-title">Apply for Leave</div>
                     </div>
                     <div class="col s12 m12 l8">
                         <div class="card">
                             <div class="card-content">
                                 <form id="example-form" method="post" name="addemp">
                                     <div>
-                                        <h1 style="background-color:rgba(255,99 ,71);">Apply for Leave </h1>
+                                        <h3>Apply for Leave</h3>
                                         <section>
                                             <div class="wizard-content">
                                                 <div class="row">
@@ -94,22 +95,21 @@ foreach($results as $result)
 </div>
 
 
-<div class="input-field col m6 s12"><br><br><br><br><br>
-<label for="fromdate">From  Date</label><br>
-<input placeholder="" id="mask1" name="fromdate" class="masked" type="text" data-inputmask="'alias': 'date'" required>
-</div><br>
 <div class="input-field col m6 s12">
-<label for="todate">To Date</label><br>
+<label for="fromdate">From  Date</label>
+<input placeholder="" id="mask1" name="fromdate" class="masked" type="text" data-inputmask="'alias': 'date'" required>
+</div>
+<div class="input-field col m6 s12">
+<label for="todate">To Date</label>
 <input placeholder="" id="mask1" name="todate" class="masked" type="text" data-inputmask="'alias': 'date'" required>
-</div><br>
+</div>
 <div class="input-field col m12 s12">
-<label for="birthdate">Description</label>    <br>
+<label for="birthdate">Description</label>    
 
 <textarea id="textarea1" name="description" class="materialize-textarea" length="500" required></textarea>
-</div><br>
 </div>
-<button type="submit" name="apply" id="apply" class="waves-effect waves-light btn indigo m-b-xs">Apply</button>        <br>
-	  
+</div>
+      <button type="submit" name="apply" id="apply" class="waves-effect waves-light btn indigo m-b-xs">Apply</button>                                             
 
                                                 </div>
                                             </div>
@@ -125,7 +125,6 @@ foreach($results as $result)
                 </div>
             </main>
         </div>
-		</center>
 </body>        
       
 </html>
